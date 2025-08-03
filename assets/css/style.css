@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  background-color: #0f172a;
+  height: 100%;
+}
 
 /* Styling body */
 body {
