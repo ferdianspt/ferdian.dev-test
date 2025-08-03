@@ -7,16 +7,11 @@ h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
-  background-color: #0f172a; /* warna gelap ala Brittany */
-  color: #f1f5f9;           /* warna teks terang */
+  color: #222222;
   line-height: 1.2em;
   margin-bottom: 0;
   margin-top: 0;
   font-weight: 600;
-}
-html {
-  background-color: #0f172a;
-  height: 100%;
 }
 @media (max-width: 565px) {
   .section-heading {
