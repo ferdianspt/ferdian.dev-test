@@ -54,6 +54,16 @@
     hsl(35, 100%, 68%)
   );
 
+/* =========================
+   Testimonials time color
+   ========================= */
+.testimonials-item time {
+  color: rgba(255, 255, 255, 0.7); /* warna putih agak transparan */
+  font-size: 0.85rem; /* opsional, kecilin dikit */
+  display: block; /* biar di baris baru */
+  margin-bottom: 0.5rem; /* jarak dari teks testimonial */
+}
+
   /* solid */
 
   --jet: hsl(0, 0%, 22%);
@@ -179,19 +189,19 @@ article {
   width: 100%;
   height: 1px;
   background: var(--jet);
-  margin: 16px 0;
+  margin: 9px 0;
 }
 
 .icon-box {
   position: relative;
   background: var(--border-gradient-onyx);
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--orange-yellow-crayola);
   box-shadow: var(--shadow-1);
   z-index: 1;
@@ -390,6 +400,7 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-2);
+
 }
 
 .sidebar.active .sidebar-info_more {
@@ -440,11 +451,11 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
+  font-size: 22px;
 }
 
 
-.social-item .social-link:hover { color: var(--light-gray); }
+.social-item .social-link:hover { color: var(--orange-yellow-crayola); }
 
 
 
@@ -540,9 +551,6 @@ main {
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
-
-.service-icon-box img { margin: auto; }
 
 .service-content-box { text-align: center; }
 
@@ -1138,7 +1146,7 @@ main {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(1) invert(1);
+  /* filter: grayscale(1) invert(1); */
 }
 
 .contact-form { margin-bottom: 10px; }
@@ -1399,10 +1407,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 30px;
   }
 
-  .service-icon-box {
-    margin-bottom: 0;
-    margin-top: 5px;
-  }
 
   .service-content-box { text-align: left; }
 
@@ -1854,9 +1858,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contacts-list { grid-template-columns: 1fr; }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;        /* biar teks bisa wrap */
+  overflow: visible;          /* jangan sembunyikan teks */
+  text-overflow: clip;        /* hilangkan ellipsis */
+  word-break: break-word;     /* pecah kata panjang */
   }
 
   .contact-info :is(.contact-link, time, address) {
@@ -1880,3 +1885,86 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/* --- ICON STYLE --- */
+/* --- ICON STYLE --- */
+.icon-contact {
+  font-size: 28px;
+  color: #fff;  /* default putih */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-contact:hover {
+  transform: scale(1.35);
+  color: var(--orange-yellow-crayola); /* pakai variabel warna */
+}
+
+/* --- TEKS STYLE --- */
+.contact-link {
+  display: inline-block;      
+  color: #333;                 /* warna default */
+  transition: color 0.3s ease; 
+  text-decoration: none;       
+}
+
+.contact-link:hover {
+  color: var(--orange-yellow-crayola); /* pakai variabel warna */
+}
+
+.service-content-box .service-item-title {
+transition: color 0.3s ease; 
+  text-decoration: none;       
+}
+.service-content-box .service-item-title:hover {
+color: var(--orange-yellow-crayola); /* pakai variabel warna */
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); } /* lebih besar dari sebelumnya */
+}
+.contact-link {
+  display: inline-block;      
+  color: #333;                 /* warna default */
+  transition: color 0.3s ease; 
+  text-decoration: none;       
+}
+
+.contact-link:hover {
+  color: var(--orange-yellow-crayola); /* pakai variabel warna */
+}
+
+/* === service-icon === */
+.service-item {
+    display: flex;
+    flex-direction: column; /* Ubah ke column supaya icon di atas */
+    align-items: center;    /* Center semua content */
+    text-align: center;     /* Center teks */
+    color: #fff;                 /* warna default */
+    margin-bottom: 20px;
+
+}
+
+.service-icon-box {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.service-icon-box img,
+.service-icon-box ion-icon {
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.service-content-box {
+    text-align: center;
+}
+
+
+.service-icon:hover {
+  animation: pulse 0.6s;
+  color: var(--orange-yellow-crayola); /* pakai variabel warna */
+}
+
+<!-- END OF CSS CODE -->
